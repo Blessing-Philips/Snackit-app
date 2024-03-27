@@ -1,6 +1,6 @@
 import styles from './navigation.module.css';
 import { Link } from 'react-router-dom';
-
+// 
 const Navigation = () => {
     return <>
     <header className={styles.header}> <NavBar /> </header>
@@ -21,8 +21,9 @@ function NavBar () {
 
         <div className={styles.register}>
             <img src="/" alt="Cart icon" style={{paddingRight: "10px"}} />
-            <li>Sign up</li>
-            <li>Login</li>
+            <li><Link to="/#" >Sign up</Link></li>
+            <li><Link to="/#" > Login</Link></li>
+            
         </div>
     </nav>
 }

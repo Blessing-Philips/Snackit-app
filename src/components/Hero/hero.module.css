@@ -1,0 +1,32 @@
+.main{
+    background: rgb(187,127,224);
+    /* background: linear-gradient(90deg, rgba(115,0,255,1) 40%,  rgba(187,127,224,1) 90%); */
+    background: linear-gradient(90deg, rgba(187,127,224,1) 0%, rgba(115,0,255,1) 52%);
+    height: 50vh;
+    padding: 20px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+}
+
+.textwrap{
+    width: 600px;
+}
+
+.lead >span{
+    display: block;
+    color: var(--yellow)
+}
+.textwrap p {
+    text-align: justify;
+    line-height: 24px;
+    font-size: var(--default);
+    padding: 5px 0;
+}
+
+.btnwrapper {
+    padding: 10px 0;
+    width: 120px;
+}

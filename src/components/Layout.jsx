@@ -3,9 +3,9 @@ import Navigation from "./Navigation"
 
 const Layout =() =>{
     return <>
-    <Navigation/>
+    <Navigation />
 
-    <main>
+    <main className="container">
         <Outlet />
     </main>
     </>

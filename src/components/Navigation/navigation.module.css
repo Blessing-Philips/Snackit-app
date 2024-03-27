@@ -1,6 +1,7 @@
 .header{
     position: sticky;
-    background-color: #7300ff;
+    background: rgb(187,127,224);
+    background: linear-gradient(90deg, rgba(187,127,224,1) 0%, rgba(115,0,255,1) 52%);    padding: 20px 0;
     
 }
 
@@ -28,10 +29,12 @@
     flex-shrink: 0;
 }
 
-.register > li {
+.register > * {
     display: flex;
 }
 
-.register > li + li {
-    padding-left: 20px;
+.register > * + * {
+    margin-left: 20px;
+
 }
+

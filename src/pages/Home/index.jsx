@@ -1,9 +1,11 @@
+import Footer from "../../components/Footer";
+import Hero from "../../components/Hero";
+
 const Home = () => {
-    return <div>
-        <h1>
-        Welcome to the food app
-        </h1>
-    </div>
+    return <>
+        <Hero />
+        <Footer/>
+    </>
 }
 
 export default Home;
