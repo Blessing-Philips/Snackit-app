@@ -1,20 +1,29 @@
 .main{
     background: rgb(187,127,224);
     /* background: linear-gradient(90deg, rgba(115,0,255,1) 40%,  rgba(187,127,224,1) 90%); */
-    background: linear-gradient(90deg, rgba(187,127,224,1) 0%, rgba(115,0,255,1) 52%);
-    height: 50vh;
-    padding: 20px ;
+    /* background: linear-gradient(90deg, rgba(187,127,224,1) 0%, rgba(115,0,255,1) 52%); */
+    background: linear-gradient(to right, rgba(187,127,224,0.9) 0%, rgba(115,0,255,0.9) 52%), url("https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* height: 457px; */
+    padding: 90px 40px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
-    flex-shrink: 1;
 }
 
 .textwrap{
-    width: 600px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
+.lead {
+    font-size: var(--large);
+}
 .lead >span{
     display: block;
     color: var(--yellow)
@@ -23,10 +32,110 @@
     text-align: justify;
     line-height: 24px;
     font-size: var(--default);
+    font-weight: 500;
     padding: 5px 0;
 }
 
 .btnwrapper {
     padding: 10px 0;
     width: 120px;
+}
+
+.imagecontainer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 50%; 
+    overflow: hidden;
+}
+
+ .imagecontainer > img {
+    width: 100%;
+    height: auto;  
+    animation-name: imgRotate;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+}
+
+@keyframes imgRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /*RESPONSIVENESS*/
+
+  /* For Desktop View */
+@media screen and (min-width: 1083px) {
+    .main {
+        flex-wrap: wrap;
+    }
+}
+ 
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1083px) {
+    .main{
+        flex-shrink: 0;
+    }
+    .textwrap{
+        width: 50%;
+    }
+    .lead{
+        font-size: var(--medium);
+    }
+
+    .textwrap p {
+        width: 80%;
+    }
+    .imagecontainer {
+        justify-content: flex-end;
+    }
+    .imagecontainer >img {
+        justify-content: center;
+        width: 80%;
+    }
+}
+@media screen and (min-device-width: 480px) 
+    and (max-device-width: 767px) {
+        .main{
+            flex-direction: column;
+        }
+        .textwrap{
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .textwrap p{
+            text-align: center;
+        }
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+        .main{
+            flex-direction: column;
+        }
+        .textwrap{
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .textwrap p{
+            text-align: center;
+        }
 }

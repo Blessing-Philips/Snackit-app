@@ -1,7 +1,11 @@
 .header{
-    position: sticky;
-    background: rgb(187,127,224);
-    background: linear-gradient(90deg, rgba(187,127,224,1) 0%, rgba(115,0,255,1) 52%);    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--purple);
+    /* background: linear-gradient(90deg, rgba(187,127,224,1) 0%, rgba(115,0,255,1) 52%);     */
+    padding: 20px 0;
     
 }
 
