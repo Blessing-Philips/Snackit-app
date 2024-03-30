@@ -1,0 +1,35 @@
+.cardFlex{
+    display: flex;
+    gap: 25px;
+    transition: 3s;
+}
+
+
+.card {
+    padding: 20px;
+    width: 300px;
+    box-shadow: 1px 1px 10px  1px rgba(83, 82, 82, 0.461);
+    transition: 0.3s;
+    
+
+}
+
+.card:hover {
+    background-color: var(--purple);
+    color: var(--yellow);
+    
+
+}
+.card > img{
+    width:45px;
+    height: 45px;
+}
+.card > h3 {
+    font-size: 25px;
+    padding: 10px 0;
+}
+.card > p {
+    font-size: var(--default);
+    padding: 2px 0;
+}
+
