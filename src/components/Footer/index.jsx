@@ -1,7 +1,7 @@
 import styles from './footer.module.css';
 
 const Footer = () => {
-    return <div className={styles.footer}>
+    return <div className={`container ${styles.footer}`}>
        
         <hr className={styles.width}></hr>
         <div className={styles.footerList}>

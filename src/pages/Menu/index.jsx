@@ -1,6 +1,8 @@
+import Intro from "../../components/Intro";
+
 const Menu = () => {
     return <div>
-        Loading ....
+        <Intro>Menu</Intro>
     </div>
 }
 

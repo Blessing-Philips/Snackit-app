@@ -6,13 +6,11 @@ const Hero = () => {
     return (
         <div className={styles.main}>
             <div className={styles.textwrap}>
-                <h2 className={styles.lead}> Enjoy our 
-                    <span> Delicious Meal</span>
+                <h2 className={styles.lead}> Deliciousness 
+                    <span> in every bite</span>
                 </h2>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Illo quaerat harum asperiores sapiente consequatur, 
-                    nobis soluta sequi atque, aperiam cupiditate ex maiores nesciunt vel, 
-                    facilis incidunt ipsam explicabo. Dolorem, debitis.
+                <p> Taste the difference with our delectable finger foods and homemade meals, 
+                    where every bite is a journey of flavor and delight
                 </p>
                 <div className={styles.btnwrapper}>
                     <Button>See Menu</Button>

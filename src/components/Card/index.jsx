@@ -27,25 +27,18 @@ const cardItems = [
 ]
 
 const Card = () => {
-
-
-    
     return <div className={styles.cardFlex}>
         {cardItems.map((card)=> (
             <CardList card={card} key={card.title} />
         ))}       
-
     </div>            
 }
-
-
 
 const CardList =({card}) =>{
 
     CardList.propTypes = {
         card: PropTypes.node.isRequired,
         }
-
     return <div className={styles.card}>  
       <img src={card.image} alt={card.title} className=""/>
       <h3>{card.title}</h3>
@@ -53,19 +46,6 @@ const CardList =({card}) =>{
                        
     </div>
 }
-// const Card = (props) => {
-
-//     Card.propTypes = {
-//         children: PropTypes.node.isRequired,
-//         variant:PropTypes.node.isRequired,
-//         };
-
-//     return <div>     
-                
-                
-//     </div>
-// }
 
 export default Card;
 
-// const 
