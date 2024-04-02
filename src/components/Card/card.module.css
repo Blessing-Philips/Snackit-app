@@ -1,20 +1,15 @@
 .cardFlex{
-    /* width: 100%; */
     display: flex;
     gap: 25px;
-    /* transition: 3s; */
-    /* background-color: brown; */
+
     
 }
 
 
 .card {
     padding: 20px;
-    /* width: 300px; */
     box-shadow: 1px 1px 10px  1px rgba(83, 82, 82, 0.461);
     transition: 0.3s;
-    
-
 }
 
 .card:hover {
