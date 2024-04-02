@@ -1,0 +1,38 @@
+.footer {
+    padding: 20px;
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.width{
+    margin: 15px 20px;
+}
+
+.footerList{
+    padding: 30px;
+    display: flex;
+    column-gap: 250px;
+    align-items: center;
+    font-size: var(--small);
+}
+
+.footerList > ul > li{
+    display: flex;
+    line-height: 30px;
+    font-weight: 400;
+}
+.list{
+    padding-left: 30px;
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+}
+.list > li{
+    display: flex;
+    /* gap: 10px;
+    font-size: 12px; */
+}
+.btnwrap {
+    width: 350px;
+    padding:  0 50px;
+}
