@@ -32,5 +32,6 @@ app.listen(port, () => {
 
 /*app.use('/', (req, res) => {
     res.send("Welcome to Snackit")
-})*/
-app.use('/api/', productRouter)
+});*/
+
+app.use('/api/', productRouter);
