@@ -1,0 +1,18 @@
+.main{
+    background: #260054;
+    background: linear-gradient(to right, #260054ea 0%, #460298ea 52%), url("https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 457px;
+    padding: 90px 40px 40px;
+    border-radius: 0 0 10px 10px;
+}
+
+.lead{
+font-size: var(--large);
+color: var(--white);
+text-align: center;
+transform: translateY(100px);
+
+}

@@ -1,0 +1,35 @@
+.slideWrap{
+    background-color:rgb(250, 249, 246);
+    padding: 20px;
+}
+.slideWrap h2{
+    font-family: "Joti One";
+    font-size: var(--medium);
+    color: var(--purple);
+    text-align: center;
+}
+.slideWrap p{
+    padding: 20px 50px ;
+    margin: auto;
+    width: 989px;
+    color: var(--dark);
+    text-align: center;
+}
+.slides{
+    padding: 20px 0 20px 40px;
+    /* background-color: var(--yellow); */}
+ .wrap{
+width: 300px;
+}
+
+.wrap > img {
+    width: 90%;
+}
+
+.btnwrap {
+    display: block;
+    width: 90%
+}
+
+
+

@@ -1,9 +1,15 @@
+import Hero from "../../components/Hero";
+import Service from "../../components/Service";
+import Carousel from "../../components/Slider/carousel";
+
+
 const Home = () => {
-    return <div>
-        <h1>
-        Welcome to the food app
-        </h1>
-    </div>
+    return <>
+        <Hero />
+        <Service />
+        <Carousel/>
+        
+    </>
 }
 
 export default Home;
