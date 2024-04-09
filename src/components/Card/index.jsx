@@ -3,6 +3,7 @@ import styles from './card.module.css';
 
 
 
+
 const cardItems = [
     {
         title: "Master Chef",
@@ -27,18 +28,21 @@ const cardItems = [
 ]
 
 const Card = () => {
-    return <div className={styles.cardFlex}>
-        {cardItems.map((card)=> (
-            <CardList card={card} key={card.title} />
-        ))}       
-    </div>            
+  return <div className={styles.cardFlex}>
+
+    {cardItems.map((card)=> (
+      <CardList card={card} key={card.title} />
+    ))} 
+          
+  </div>         
 }
 
 const CardList =({card}) =>{
 
     CardList.propTypes = {
         card: PropTypes.node.isRequired,
-        }
+    }
+
     return <div className={styles.card}>  
       <img src={card.image} alt={card.title} className=""/>
       <h3>{card.title}</h3>
