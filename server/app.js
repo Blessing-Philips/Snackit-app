@@ -6,7 +6,8 @@ const app = express();
 
 const db = require('./Database/main');
 const productRouter = require('./routes/productRoute');
-const home = require('./routes/home')
+const homeRouter = require('./routes/home')
+const categoryRouter = require('./routes/categoryRoute');
 
 //const env = require('dotenv').config({path: '../'})
 
@@ -30,8 +31,8 @@ app.listen(port, () => {
     console.log(`Server listening on port ${port}...`);
 });
 
-/*app.use('/', (req, res) => {
-    res.send("Welcome to Snackit")
-});*/
+app.use('/', homeRouter);
 
 app.use('/api/', productRouter);
+
+app.use('/api', categoryRouter)
