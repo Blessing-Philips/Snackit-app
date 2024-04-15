@@ -21,7 +21,8 @@ const ProductSchema = new Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Category'
         },
-        foodIitems: [String]
+        foodIitems: [String],
+        imageURL: { type: String }
     }
 );
 
