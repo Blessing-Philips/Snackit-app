@@ -1,3 +1,76 @@
 .wrapper{
-    background-color: brown;
+    padding: 40px;
+
 }
+
+.wrapper h2{
+    text-align: center;
+    font-size: var(--medium);
+    color: var(--purple);
+    font-family: "Joti One";
+    padding: 0 0 20px;
+}
+.lead{
+    padding: 50px 0 0;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex .imgDiv {
+    width: 40%;
+    object-fit: cover;
+    text-align: right;
+}
+
+.imgDiv img{
+    width: 80%;
+
+}
+.flex2 .imgDiv img{
+    width: 100%;
+
+}
+.flex p{
+    width: 50%;
+    text-align: justify;
+    line-height: 30px;
+}
+
+.flex2{
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex2 p{
+    width: 50%;
+    text-align: justify;
+    line-height: 30px;
+}
+
+.imgDiv2 img{
+    width: 95%;
+}
+
+.btnwrap{
+    width: 120px;
+}
+
+.infowrap p {
+    width: 100%;
+    padding: 0 0 20px;
+    text-align: justify;
+    line-height: 30px;
+}
+
+
+.infowrap{
+    width: 50%;
+}
+

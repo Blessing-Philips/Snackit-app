@@ -5,7 +5,7 @@ const Intro = ({children}) => {
     
     Intro.propTypes = {
         children: PropTypes.node.isRequired,
-        };
+    };
 
     return (
         <div className={styles.main}>

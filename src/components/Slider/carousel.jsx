@@ -30,19 +30,31 @@ const Carousel = () => {
           <div className={styles.wrap}>
             <img src={menu1} alt="Slide 1"  />
             <span className={styles.btnwrap}>
-              <Button>Order Now&gt;&gt;&gt; </Button>
+              <Button>Add +</Button>
             </span>
           </div>
           <div className={styles.wrap}>
             <img src={menu2} alt="Slide 2" height="240px"/>
             <span className={styles.btnwrap}>
-              <Button>Order Now&gt;&gt;&gt;</Button>
+              <Button>Add +</Button>
             </span>
           </div>
           <div className={styles.wrap}>
             <img src={menu1} alt="Slide 3" />
             <span className={styles.btnwrap}>
-              <Button>Order Now&gt;&gt;&gt;</Button>
+              <Button>Add +</Button>
+            </span>
+          </div>
+          <div className={styles.wrap}>
+            <img src={menu1} alt="Slide 6" />
+            <span className={styles.btnwrap}>
+              <Button>Add +</Button>
+            </span>
+          </div>
+          <div className={styles.wrap}>
+            <img src={menu2} alt="Slide 2" height="240px"/>
+            <span className={styles.btnwrap}>
+              <Button>Add +</Button>
             </span>
           </div>
         </Slider>

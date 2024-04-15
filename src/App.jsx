@@ -1,12 +1,16 @@
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
-import Menu from './pages/Menu';
-import About from './pages/About';
-import PaymentSuccess from './pages/PaymentSuccess'
-
+import { Suspense, lazy } from 'react';
 import Layout from './components/Layout';
+const Home = lazy(() => import ('./pages/Home'));
+const Cart = lazy(() => import ('./pages/Cart'));
+const Menu = lazy(() => import ('./pages/Menu'));
+const About = lazy(() => import ('./pages/About'));
+const Contact = lazy(() => import ('./pages/Contact'));
+const PaymentSuccess = lazy(() => import ('./pages/PaymentSuccess'));
+const SignUp = lazy(() => import ('./pages/Signup'));
+const Login = lazy(() => import ('./pages/Login'));
+
 
 function App() {
 
@@ -16,6 +20,9 @@ function App() {
       <Route path="/about" element={<About/>}></Route>
       <Route path="/menu" element={<Menu/>}></Route>
       <Route path="/cart" element={<Cart/>}></Route>
+      <Route path="/contact" element={<Contact/>}></Route>
+      <Route path="/sign-up" element={<SignUp/>}></Route>
+      <Route path="/login" element={<Login/>}></Route>
       <Route path="/payment-success" element={<PaymentSuccess/>}></Route>
     </Route>
   ))
@@ -23,9 +30,10 @@ function App() {
 
   return (
     <>
-      <div>
+      <Suspense fallback={<div>Loading...</div>}>
         <RouterProvider router={router} />
-      </div>
+      </Suspense>
+
       
     </>
   )
