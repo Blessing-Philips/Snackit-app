@@ -1,12 +1,12 @@
 import Hero from "../../components/Hero";
 import Service from "../../components/Service";
-import Carousel from "../../components/Slider/carousel";
+import ProductSlide from "../../components/ProductShowcase/productSlide";
 
 
 const Home = () => {
     return <>
         <Hero />
-        <Carousel/>
+        <ProductSlide/>
         <Service />
         
     </>

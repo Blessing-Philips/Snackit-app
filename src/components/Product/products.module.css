@@ -1,0 +1,47 @@
+.wrap{
+    /* background-color:aliceblue; */
+    color: var(--dark);
+    width: 370px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.295);
+    padding: 20px;
+}
+
+.lead{
+    /* background-color: var(--purple); */
+    color: var(--dark);
+    font-size: 20px;
+    font-family: "Joti One";
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 5px 3px;
+}
+.lead span {
+    display: block;
+    font-family: inter;
+    font-weight: 500;
+}
+
+.lead span::before{
+    content: "#"
+}
+
+.imgDiv{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: auto;
+
+}
+
+.img{
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
+
+/* .btnwrap{
+    width: 40px;
+    text-align: right;
+    transform: translateX(328px);
+} */

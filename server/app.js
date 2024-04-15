@@ -11,7 +11,7 @@ const home = require('./routes/home')
 //const env = require('dotenv').config({path: '../'})
 
 var corsOption = {
-    origin : "http://localhost:8080"
+    origin : "http://localhost:5173"
 };
 
 app.use(cors(corsOption));

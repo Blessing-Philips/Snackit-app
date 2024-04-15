@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import styles from './navigation.module.css';
-import { Link } from 'react-router-dom';
-import Logo from '../../assets/snackit.png';
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { IoCartOutline } from "react-icons/io5";
+import styles from './navigation.module.css';
+import Logo from '../../assets/snackit.png';
 import Button from '../Button';
+import { useSelector } from 'react-redux';
+import {cartProduct} from "../../store/cartSlice"
 // 
 
 const Navigation = () => {
@@ -36,6 +39,7 @@ function NavBar () {
     const [activeList, setActiveList] = useState("Home");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
+    const cart = useSelector(cartProduct)
 
     const handleClick =(navItem) => {
         setActiveList(navItem)
@@ -84,7 +88,15 @@ function NavBar () {
                     <li><Link to="/login" onClick={() => handleClick('login')} className={activeList === 'login' ? 'active' : ''}> Login</Link></li>
                 </>
             }
-         <img src="/" alt="Cart icon" style={{paddingRight: "10px"}} />
+            <Link to='/cart' onClick={() => handleClick('cart')} className={`${activeList === 'cart' ? 'active' : ''} ${styles.cartRelative}`}>
+                <IoCartOutline size={30} />
+                {
+                    cart && cart.length > 0 ? 
+                    <span className={styles.cartCount}>{cart.length}</span> : null
+                }
+                {/* <span className={styles.cartCount}>{cart ? cart.length : }</span> */}
+            </Link>
+       
         </ul>
     </nav>
 }
