@@ -1,19 +1,21 @@
 const express = require('express');
 
-const router = express.Router();
+const Category = require('../models/CategoryModel');
 
 const Product = require('../models/productModel');
 
-router.get('/products', async (req, res) => {
+const router = express.Router();
+
+router.get('/categories', async (req, res) => {
     try {
-        const products = await(Product.find())
-        res.status(200).send({data : products})
-    } catch (err){
+        const categories = await(Category.find())
+        res.status(200).send({data : categories})
+    } catch (err) {
         res.status(400).send({error : err})
     }
 });
 
-router.get('/products-by-categories/:categoryId', async (req, res) => {
+/*router.get('/products-by-categories/:categoryId', async (req, res) => {
 
     try {
         const categoryId = req.params.categoryId
@@ -31,6 +33,6 @@ router.get('/products-by-categories/:categoryId', async (req, res) => {
     } catch (err) {
         res.status(400).send({ error: err})
     }
-})
+})*/
 
-module.exports = router;
+module.exports = router
