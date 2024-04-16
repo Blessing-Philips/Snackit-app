@@ -6,7 +6,7 @@ const categorySchema = new Schema({
     name : { type : String, required : true }
 });
 
-const Category = mongoose.model('Category', categorySchema);
+//const Category = mongoose.model('Category', categorySchema);
 
 const ProductSchema = new Schema(
     {
@@ -21,7 +21,7 @@ const ProductSchema = new Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Category'
         },
-        foodIitems: [String],
+        foodItems: [String],
         imageURL: { type: String }
     }
 );

@@ -7,6 +7,7 @@ const app = express();
 const db = require('./Database/main');
 const productRouter = require('./routes/productRoute');
 const homeRouter = require('./routes/home')
+const customerRouter = require('./routes/customerRoute');
 
 //const env = require('dotenv').config({path: '../'})
 
@@ -33,3 +34,5 @@ app.listen(port, () => {
 app.use('/', homeRouter);
 
 app.use('/api/', productRouter);
+
+app.use('/sign-in/', customerRouter);
