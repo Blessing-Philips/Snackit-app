@@ -11,6 +11,7 @@
 
 .lead{
 font-size: var(--large);
+font-family: "Joti One";
 color: var(--white);
 text-align: center;
 transform: translateY(100px);

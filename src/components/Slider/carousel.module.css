@@ -1,7 +1,7 @@
 .slideWrap{
+    margin: 40px 0 0;
     background-color:rgb(250, 249, 246);
-    padding: 20px;
-}
+    padding: 20px;}
 .slideWrap h2{
     font-family: "Joti One";
     font-size: var(--medium);
@@ -17,8 +17,10 @@
 }
 .slides{
     padding: 20px 0 20px 40px;
-    /* background-color: var(--yellow); */}
- .wrap{
+    /* background-color: var(--yellow); */
+}
+
+.wrap{
 width: 300px;
 }
 

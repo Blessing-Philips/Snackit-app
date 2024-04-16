@@ -1,13 +1,13 @@
 .main{
     background: rgb(187,127,224);
-    background: linear-gradient(to right, rgba(187,127,224,0.9) 0%, rgba(115,0,255,0.9) 52%), url("https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=600");
+    /* background: linear-gradient(to right, rgba(187,127,224,0.9) 0%, rgba(115,0,255,0.9) 52%), url("https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=600"); */
+    background-image: url("../../assets/hero-img.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* height: 457px; */
-    padding: 90px 40px 40px;
+    height: 612px;
+    padding: 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border-radius: 0 0 10px 10px;
 
@@ -25,10 +25,10 @@
     font-size: var(--large);
     line-height: 65px;
     font-family: "Joti One";
+    color: var(--yellow);
 }
 .lead >span{
     display: block;
-    color: var(--yellow)
 }
 .textwrap p {
     text-align: justify;
@@ -36,14 +36,15 @@
     font-size: var(--default);
     font-weight: 500;
     padding: 19px 0 7px;
+    color: var(--white);
 }
 
 .btnwrapper {
     padding: 10px 0;
-    width: 120px;
+    width: 214px;
 }
 
-.imagecontainer {
+/* .imagecontainer {
     text-align: center;
     display: flex;
     align-items: center;
@@ -65,7 +66,7 @@
     animation-timeline: auto;
     animation-range-start: normal;
     animation-range-end: normal;
-}
+} */
 
 @keyframes imgRotate {
     0% {
@@ -99,13 +100,6 @@
     }
 
     .textwrap p {
-        width: 80%;
-    }
-    .imagecontainer {
-        justify-content: flex-end;
-    }
-    .imagecontainer >img {
-        justify-content: center;
         width: 80%;
     }
 }

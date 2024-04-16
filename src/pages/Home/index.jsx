@@ -6,8 +6,8 @@ import Carousel from "../../components/Slider/carousel";
 const Home = () => {
     return <>
         <Hero />
-        <Service />
         <Carousel/>
+        <Service />
         
     </>
 }

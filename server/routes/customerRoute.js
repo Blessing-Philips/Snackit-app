@@ -1,5 +1,6 @@
 const express = require('express');
 
+<<<<<<< HEAD
 const Customer = require('../models/customerModel');
 
 const router = express.Router();
@@ -24,3 +25,12 @@ router.post('/new-user', async (req, res) => {
 });
 
 module.exports = router
+=======
+const customer = require('../mo')
+
+const router = express().Router;
+
+router.post('/', async (req, res) => {
+
+})
+>>>>>>> 0e95c99582deaaefa945af7a19bc5d4ecad5afde
