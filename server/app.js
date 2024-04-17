@@ -6,8 +6,10 @@ const app = express();
 
 const db = require('./Database/main');
 const productRouter = require('./routes/productRoute');
-const homeRouter = require('./routes/home')
-const categoryRouter = require('./routes/categoryRoute');
+const homeRouter = require('./routes/home');
+const customerRouter = require('./routes/customerRoute');
+
+
 
 //const env = require('dotenv').config({path: '../'})
 
@@ -25,7 +27,7 @@ db.on('open', ()=>{
 });
 db.on('error', console.error.bind(console, 'Database connection error!'));
 
-//Coonection to server
+//Connection to server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server listening on port ${port}...`);
@@ -35,4 +37,7 @@ app.use('/', homeRouter);
 
 app.use('/api/', productRouter);
 
-app.use('/api', categoryRouter)
+app.use('/sign-in/', customerRouter);
+
+
+
