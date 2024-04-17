@@ -15,7 +15,7 @@ router.get('/products', async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
+
 
 router.get('/categories', async (req, res) => {
     try {
@@ -28,12 +28,12 @@ router.get('/categories', async (req, res) => {
 
 router.get('/products-by-categories/:categoryId', async (req, res) => {
 
-    try {
-=======
-router.get('/products-by-categories/:categoryId', async (req, res) => {
+//    try {
+//=======
+//router.get('/products-by-categories/:categoryId', async (req, res) => {
 
     try {
->>>>>>> 0e95c99582deaaefa945af7a19bc5d4ecad5afde
+//>>>>>>> 0e95c99582deaaefa945af7a19bc5d4ecad5afde
         const categoryId = req.params.categoryId
         console.log("category received: ", categoryId)
 

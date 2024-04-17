@@ -6,12 +6,11 @@ const app = express();
 
 const db = require('./Database/main');
 const productRouter = require('./routes/productRoute');
-const homeRouter = require('./routes/home')
-<<<<<<< HEAD
+const homeRouter = require('./routes/home');
 const customerRouter = require('./routes/customerRoute');
-=======
+
 const categoryRouter = require('./routes/categoryRoute');
->>>>>>> 0e95c99582deaaefa945af7a19bc5d4ecad5afde
+
 
 //const env = require('dotenv').config({path: '../'})
 
@@ -39,8 +38,8 @@ app.use('/', homeRouter);
 
 app.use('/api/', productRouter);
 
-<<<<<<< HEAD
+
 app.use('/sign-in/', customerRouter);
-=======
+
 app.use('/api', categoryRouter)
->>>>>>> 0e95c99582deaaefa945af7a19bc5d4ecad5afde
+
