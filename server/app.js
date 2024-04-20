@@ -2,16 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+//Loads .env file contents into process.env by default.
+//const stripe = require ('stripe')
+
 const app = express();
 
 const db = require('./Database/main');
 const productRouter = require('./routes/productRoute');
 const homeRouter = require('./routes/home');
 const customerRouter = require('./routes/customerRoute');
+const paymentRouter = require('./routes/paymentRoute');
 
-
-
-//const env = require('dotenv').config({path: '../'})
 
 var corsOption = {
     origin : "http://localhost:5173"
@@ -37,7 +38,43 @@ app.use('/', homeRouter);
 
 app.use('/api/', productRouter);
 
-app.use('/sign-in/', customerRouter);
+app.use('/api/', customerRouter);
 
+app.use('/', paymentRouter);
 
+//PAYMENT GATEWAY INTEGRATION
 
+/*const https = require('https')
+
+const params = JSON.stringify({
+  "email": "customer@email.com",
+  "amount": "20000"
+})
+
+const options = {
+  hostname: 'api.paystack.co',
+  port: 443,
+  path: '/transaction/initialize',
+  method: 'POST',
+  headers: {
+    Authorization: 'Bearer SECRET_KEY',
+    'Content-Type': 'application/json'
+  }
+}
+
+const req = https.request(options, res => {
+  let data = ''
+
+  res.on('data', (chunk) => {
+    data += chunk
+  });
+
+  res.on('end', () => {
+    console.log(JSON.parse(data))
+  })
+}).on('error', error => {
+  console.error(error)
+})
+
+req.write(params)
+req.end()*/

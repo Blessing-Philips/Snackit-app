@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 
 const CustomerSchema = new Schema(
     {
-        name : { type : String, required : true },
+        name : { 
+            type : String, 
+            min : 2,
+            max : 50,
+            required : true 
+        },
         email : {
             type : String,
             required : true,
@@ -13,11 +18,11 @@ const CustomerSchema = new Schema(
         password : {
             type : Number,
             required : true,
-            min : 8,
-            max : 8
+            min : 6
+            //max : 8
         },
-        phone : { type : Number, required : true, max : 11 }
+        phone : { type : Number, required : true, }
     }
 );
 
-module.exports = ('Customer', CustomerSchema)
+module.exports = mongoose.model('Customer', CustomerSchema)
