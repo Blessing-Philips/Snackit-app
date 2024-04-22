@@ -23,11 +23,11 @@ router.get('/payment', () => {
     const req = https.request(options, res => {
         let data = ''
 
-        paymentres.on('data', (chunk) => {
+        respaystack.on('data', (chunk) => {
             data += chunk
         });
 
-        paymentres.on('end', () => {
+        respaystack.on('end', () => {
             console.log(JSON.parse(data))
         })
     }).on('error', error => {

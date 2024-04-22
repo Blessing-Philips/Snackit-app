@@ -14,6 +14,10 @@ const router = express.Router();
 Customer.insertMany([data]);
 console.log(data)*/
 
+/*You can also initialize everything once by using: 
+const {name, email, phone, _id} = req.body
+*/
+
 router.post('/new-user', async (req, res) => {
     const customer = new Customer({
         name: req.body.name,
@@ -26,5 +30,14 @@ router.post('/new-user', async (req, res) => {
     res.json(new_user)
     console.log(new_user)
 });
+
+router.get('/user', async (req, res) => {
+    try {
+        const user = await(Customer.find());
+        res.status(400).json(user);
+    } catch (err) {
+        res.status(400).send({error: err.message})
+    }
+})
 
 module.exports = router;
