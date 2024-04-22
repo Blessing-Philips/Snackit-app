@@ -1,13 +1,21 @@
 import Intro from "../../components/Intro";
-import ComponentCard from "../../components/componentCards";
+import ComponentCard from "../../components/componentCard";
+import { useNavigate } from "react-router-dom";
 import styles from './about.module.css';
 import about1 from '../../assets/image-14.png';
 import about2 from '../../assets/image-18.png';
 import about3 from '../../assets/image-12.png';
+// import hero from '../../assets/hero1.png';
 import Button from "../../components/Button";
+
+
 const About = () => {
+    const navigate = useNavigate();
+    const handleClick =()=>{
+        navigate('/menu');
+    }
     return <>
-        <Intro>About</Intro>
+        <Intro className={styles.main}>About</Intro>
         <p className={styles.lead}>
             Dive into a world of culinary inspiration with our vast selection menus. our goal is 
             to inspire you to explore new flavors, techniques, and cuisines, right from the comfort 
@@ -65,7 +73,7 @@ const About = () => {
                         menus and exceptional service.
                     </p>
                     <div className={styles.btnwrap}>
-                        <Button variant="primary">Book Now</Button>
+                        <Button variant="primary" onClick={handleClick}>Book Now</Button>
                     </div>
                 </div>
 

@@ -1,0 +1,69 @@
+.container{
+    /* height: 410px; */
+    background-color: rgba(0, 0, 255, 0.039);
+    padding: 10px 30px;
+    width: 70%;
+    border-radius: 10px;
+    /* overflow-x: auto; */
+
+}
+.orderID{
+    text-align: right;
+    color: var(--purple);
+    font-weight: 500;
+}
+
+.form{
+    padding: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    color: var(--purple);
+
+}
+.form input, textarea{
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    justify-content: center;
+}
+.form label{
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    justify-content: center;
+}
+.form span{
+    color: red;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+}
+.address, .number, .city, .order, .message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 10px; */
+}
+
+.combined{
+    display: flex;
+    justify-content: space-between;
+}
+
+.city, .order{
+    width: 45%;
+}
+.btnwrap{
+    width: 40%;
+    margin: auto;
+    padding: 10px 0 0;
+}
+.check label{
+    font-size: 12px;
+}
+.check{
+    display: flex;
+    gap: 5px;
+}

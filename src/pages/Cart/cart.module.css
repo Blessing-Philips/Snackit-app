@@ -1,0 +1,27 @@
+.emptyCart{
+    text-align: center;
+}
+
+
+.cartContainer{
+    padding: 150px 20px;
+    color: black;
+}
+.btnWrap{
+    width: 200px;
+    text-align: right;
+    transform: translateX(900px);
+}
+
+.hidden{
+    display: none;
+}
+
+.deliveryContainer{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    padding: 20px 0 0;
+    gap: 20px;
+}
+

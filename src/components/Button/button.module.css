@@ -17,7 +17,7 @@
 }
 .btn[data-variant="primary"]:hover{
     background-color: var(--purple);
-    color: var(--dark);
+    color: var(--white);
     border-radius: 5px;
 }
 .btn[data-variant="secondary"]{

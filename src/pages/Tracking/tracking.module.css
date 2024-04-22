@@ -1,0 +1,92 @@
+.container{
+    padding: 120px 30px 30px;
+}
+/* .stepper{
+    background-color: black;
+} */
+
+.step{
+    background-color: rgba(245, 245, 220, 0.648);
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.step:before{
+    content: '';
+    background-color: var(--yellow); 
+    position: absolute;
+    width: 5px;
+    height: 90%;
+    top: 15px;
+    left: 30px; 
+    bottom: 20px; 
+}
+.step::after{
+    content: '';
+    background-color: var(--yellow); 
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    left: 23px;
+    top: -4px; 
+    bottom: 5px; 
+}
+
+/* .stepper{
+    background-color: blue;
+} */
+      
+.stepIcon{
+    background-color: #6b7280;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 99999px;
+    font-weight: 600;
+    color: var(--white);
+      
+}
+
+.stepMessage{
+    color: var(--grey); 
+    font-weight: 500;
+}
+
+
+.complete:first-child:before,
+.active:first-child:before,
+.step:first-child:after {
+    background-color: orange;
+
+}
+.complete:nth-child(2):before,
+.active:nth-child(2):before,
+.step:nth-child(2):after {
+    background-color: blue;
+
+}
+.complete:nth-child(3):before,
+.active:nth-child(3):before,
+.step:nth-child(3):after {
+    background-color: blueviolet;
+
+}
+.complete:nth-child(4):before,
+.active:nth-child(4):before,
+.step:nth-child(4):after {
+    background-color: green;
+
+}
+.complete:nth-child(5):before,
+.active:nth-child(5):before,
+.step:nth-child(5):after {
+    background-color: #c50c0c;
+
+}

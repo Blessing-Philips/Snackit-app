@@ -1,7 +1,7 @@
 .main{
     background: rgb(187,127,224);
     /* background: linear-gradient(to right, rgba(187,127,224,0.9) 0%, rgba(115,0,255,0.9) 52%), url("https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=600"); */
-    background-image: url("../../assets/hero-img.png");
+    background-image: url("../../assets/hero1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -25,7 +25,7 @@
     font-size: var(--large);
     line-height: 65px;
     font-family: "Joti One";
-    color: var(--yellow);
+    color: var(--white);
 }
 .lead >span{
     display: block;

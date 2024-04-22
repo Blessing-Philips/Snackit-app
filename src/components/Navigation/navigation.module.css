@@ -40,6 +40,7 @@
     flex-shrink: 0;
     width: 900px;
     overflow: hidden;
+    padding-right: 10px;
 }
 
 .navlist > li {
@@ -49,9 +50,27 @@
     /* text-transform: uppercase; */
 }
 
+
 .btnwrap{
     width: 120px;
 
 }
 
 
+.cartRelative{
+    position: relative;
+    
+}
+
+.cartCount{
+    background-color: rgb(243, 10, 10);
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%; 
+    position: absolute;
+    top: 0px;
+    right: -1px; 
+    font-size: var(--small);
+}

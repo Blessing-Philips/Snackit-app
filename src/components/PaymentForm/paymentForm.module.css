@@ -1,0 +1,44 @@
+.paymentwrapper{
+    background-color: rgb(249, 240, 255);
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paymentwrapper h1{
+    font-size: 25px;
+}
+
+.paymentModal{
+    border: 1px solid rgba(128, 128, 128, 0.694);
+    width: 55%;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.radio{
+    display: flex;
+    gap: 10px;
+}
+
+.message{
+    text-align: justify;
+    background-color: #e1c8ff56;
+}
+.message span{
+    display: block;
+    font-weight: 600;
+    padding: 10px 0 0;
+
+}
