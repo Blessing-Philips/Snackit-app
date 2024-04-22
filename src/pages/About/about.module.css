@@ -1,3 +1,14 @@
+.main{
+    background: #260054;
+    background: linear-gradient(to right, #200047 0%, #200047d0 52%), url("../../assets/hero1.png");
+    background-image: url("../../assets/hero1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 467px;
+    padding: 90px 40px 40px;
+    border-radius: 0 0 10px 10px;
+}
 .wrapper{
     padding: 40px;
 

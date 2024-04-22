@@ -10,6 +10,7 @@ const Contact = lazy(() => import ('./pages/Contact'));
 const PaymentSuccess = lazy(() => import ('./pages/PaymentSuccess'));
 const SignUp = lazy(() => import ('./pages/Signup'));
 const Login = lazy(() => import ('./pages/Login'));
+import TrackingOrder from './pages/Tracking';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Route path="/sign-up" element={<SignUp/>}></Route>
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/payment-success" element={<PaymentSuccess/>}></Route>
+      <Route path="/track-order" element={<TrackingOrder/>}></Route>
     </Route>
   ))
  

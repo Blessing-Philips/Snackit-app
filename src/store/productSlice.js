@@ -1,55 +1,108 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+// Initial state with clear separation of concerns
 const initialState = {
     products: [],
     error: null,
-    status: 'idle'
-}
+    status: 'idle'  // can be 'idle', 'pending', 'fulfilled', or 'rejected'
+};
 
+// Asynchronous thunk for fetching products
+export const fetchProduct = createAsyncThunk('products/fetchProduct', async () => {
+    const response = await fetch('http://localhost:3000/api/products');
+    if (!response.ok) {
+        throw new Error('Failed to fetch products');
+    }
+    const data = await response.json();
+    // Optionally, handle logging or further data transformation here
+    return data;
+});
+
+// Slice definition with handlers for all relevant states
 export const productSlice = createSlice({
     name: 'products',
     initialState,
-    reducers: {},
+    reducers: {
+        // Add reducers here if needed in the future
+    },
     extraReducers: (builder) => {
-        builder.addCase(fetchProduct.fulfilled, (state, action) => {
-            state.status = 'fulfilled'
-            state.products = [...action.payload.data]
-        })
-        builder.addCase(fetchProduct.pending, (state) => {
-            state.status = 'pending'
-        })
+        builder
+            .addCase(fetchProduct.pending, (state) => {
+                state.status = 'pending';
+                state.error = null;  // Clear previous errors on new request
+            })
+            .addCase(fetchProduct.fulfilled, (state, action) => {
+                state.status = 'fulfilled';
+                state.products = action.payload.data;  // Assuming the data is nested under 'data'
+            })
+            .addCase(fetchProduct.rejected, (state, action) => {
+                state.status = 'rejected';
+                state.error = action.error.message;  // Store the error message
+                state.products = [];  // Clear products on error
+            });
     }
-})
-
-export const {getProducts} = productSlice.actions;
+});
 
 export default productSlice.reducer;
 
- export const fetchProduct = createAsyncThunk('product/fetchProduct', async () =>{
-    const response = await fetch('http://localhost:3000/api/products-by-categories');
-    const data = await response.json();
-    console.log(data);
-    return data;
-})
+// Selector to access the products array in the state
+export const selectAllProducts = state => state.products.products;  // Ensure the path is correct based on the store setup
 
 
-export const selectAllProducts = state => state.products;
+
+
+// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+// const initialState = {
+//     products: [],
+//     error: null,
+//     status: 'idle'
+// }
+
+// export const fetchProduct = createAsyncThunk('products/fetchProduct', async () =>{
+//    const response = await fetch('http://localhost:3000/api/products');
+//    if (!response.ok) {
+//     throw new Error('Failed to fetch categories');
+//     }
+//    const data = await response.json();
+//    console.log(data, "This is the data");
+//    return data;
+// })
+
+// export const productSlice = createSlice({
+//     name: 'products',
+//     initialState,
+//     reducers: {},
+//     extraReducers: (builder) => {
+//         builder.addCase(fetchProduct.fulfilled, (state, action) => {
+//             state.status = 'fulfilled'
+//             state.products = action.payload.data
+//             // state.products = [...action.payload.data]
+//         })
+//         builder.addCase(fetchProduct.pending, (state) => {
+//             state.status = 'pending'
+//         })
+//         builder.addCase(fetchProduct.rejected, (state, action) => {
+//             state.status = 'rejected'
+//             state.products = action.error.message;
+
+//         })
+
+//     }
+// })
+
+// export const {getProducts} = productSlice.actions;
+
+// export default productSlice.reducer;
+
+
+// export const selectAllProducts = state => state.products;
 
 
 // // Redux setup
 // import { createSlice, configureStore, createAsyncThunk } from '@reduxjs/toolkit';
 
-// // Async thunk for fetching categories
-// export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
-//     const response = await fetch('http://localhost:3000/api/categories');
-//     return await response.json();
-// });
 
-// // Async thunk for fetching products by category
-// export const fetchProductsByCategory = createAsyncThunk('products/fetchProductsByCategory', async (categoryId) => {
-//     const response = await fetch(http://localhost:3000/api/products-by-category/${categoryId});
-//     return await response.json();
-// });
 
 // const categorySlice = createSlice({
 //     name: 'categories',

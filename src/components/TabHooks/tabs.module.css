@@ -1,0 +1,31 @@
+.listContainer{
+    position: sticky;
+    z-index: 10000;
+}
+.listWrap{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    /* background-color: greenyellow; */
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.list{
+    background-color: transparent;
+    border: transparent;
+}
+
+.border{
+    border-bottom: 3px solid orangered;
+    color: var(--dark);
+    transition: 0.3s;
+
+}
+.border:hover{
+    color: var(--yellow);
+}
+.empty{
+    border-bottom: none;
+    color: grey
+}

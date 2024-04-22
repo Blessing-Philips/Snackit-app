@@ -1,6 +1,9 @@
 
 import Card from "../Card";
 import styles from './service.module.css';
+import Image1 from '../../assets/outdoor1.png';
+import Image2 from '../../assets/outdoor 2.png';
+import Button from "../Button";
 
 
 
@@ -14,6 +17,18 @@ const Service = () => {
         <div>
                 <Card  />      
         </div>
+        <div className={styles.imageContainer}>
+            <div>
+                <img src={Image1} alt="outdoor image"/>
+            </div>
+            <div>
+            <img src={Image2} alt="outdoor image"/>
+            </div>
+        </div>
+        <div className={styles.btnWrap}>        
+            <Button variant="secondary">Book now</Button>
+        </div>
+
     </div>
 }
 

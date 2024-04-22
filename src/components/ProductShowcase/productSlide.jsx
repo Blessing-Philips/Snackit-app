@@ -1,17 +1,20 @@
-import {useState, useEffect} from 'react';
+import { useEffect} from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './carousel.module.css';
-import {useDispatch } from 'react-redux';
+import {useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
+import { fetchProduct, selectAllProducts } from '../../store/productSlice';
 
 // import Button from '../Button';
 import ProductCard from '../Product/productCard';
 
 const ProductSlide = () => {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
+  const products = useSelector(selectAllProducts);
+  // console.log(products, ">>>> products here")
 
   const settings = {
     dots: false,
@@ -51,23 +54,9 @@ const ProductSlide = () => {
   };
 
     useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await fetch('http://localhost:3000/api/products');
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const data = await response.json();
-          setProducts(data.data);
-          console.log(data, ">>>>>>>>This is the data")
-
-        } catch (e) {
-          console.log(e, ">>>>>>>This is the error")
-        }
-      };
-  
-      fetchData();
-    }, []);
+      dispatch(fetchProduct())
+      
+    }, [dispatch]);
 
 
     const onAddItem =(product) =>{
@@ -83,13 +72,11 @@ const ProductSlide = () => {
           gatherings to grand celebrations.
         </p>
         <Slider {...settings} className={styles.slides}>
-
-        {
-            products.map((product, index) => {
-              return <ProductCard key={index} product={product} onAddItem={onAddItem}></ProductCard>
-            })
-        }
-        
+          { products ? (
+              products && products.map((product, index) => {
+                return <ProductCard key={index} product={product} onAddItem={onAddItem}></ProductCard>
+              })
+          ) : <p>Waiting for Products</p>}
         </Slider>
       </div>
     )

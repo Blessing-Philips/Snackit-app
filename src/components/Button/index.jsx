@@ -6,7 +6,7 @@ const Button = ({variant, children, onClick}) => {
     Button.propTypes = {
         children: PropTypes.node.isRequired,
         variant:PropTypes.node.isRequired,
-        onClick:PropTypes.func.isRequired,
+        onClick:PropTypes.func,
         };
 
     return <button 

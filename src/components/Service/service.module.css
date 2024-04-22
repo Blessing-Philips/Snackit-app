@@ -16,4 +16,21 @@ padding: 40px 20px;
     color: var(--dark);
     text-align: center;
 }
+.imageContainer{
+    padding: 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.imageContainer div{
+    width: 50%;
+}
+.imageContainer div> img{
+    width: 100%;
+    object-fit: contain;
+}
+.btnWrap{
+    width: 200px;
+}
 
