@@ -14,8 +14,9 @@ const paymentRouter = require('./routes/paymentRoute');
 
 
 var corsOption = {
-    origin : "http://localhost:5173",
-    credentials : true
+    origin : ["http://localhost:5173", "https://snackit-app-pmny.vercel.app"],
+    credentials : true,
+    allowedHeaders: '*'
 };
 
 app.use(cors(corsOption));
