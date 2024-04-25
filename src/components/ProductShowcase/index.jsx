@@ -8,7 +8,7 @@ import { addToCart } from '../../store/cartSlice';
 import { fetchProduct, selectAllProducts } from '../../store/productSlice';
 
 // import Button from '../Button';
-import ProductCard from '../Product/productCard';
+import ProductCard from '../Product';
 
 const ProductSlide = () => {
   const dispatch = useDispatch();
