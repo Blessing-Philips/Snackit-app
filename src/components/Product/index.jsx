@@ -17,23 +17,9 @@ const ProductCard = ({product, onAddItem}) => {
                 <h3>{product.name}</h3>
                 <p>{product.price.toLocaleString()}</p>
             </div>
-            {/* <ul>{
-                    product.foodItems && product.foodItems.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))
-                }</ul> */}
-            
-            {/* {  product.foodItems && product.foodItems.length > 0 && (
-                <p>{
-                    product.foodItems.map((item, index)=>(
-                        <span key={index}>{item}</span>
-                    ))}
-                </p>
-            )} */}
             <div className={styles.btnwrap}>
                 <Button variant="primary" onClick={addItem}>+</Button>
             </div>
-            {/* <AddButton onAddItem={addItem}/> */}
 
         </div>
     )

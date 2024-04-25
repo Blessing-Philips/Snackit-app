@@ -1,7 +1,7 @@
 .main{
     background: #260054;
-    background: linear-gradient(to right, #200047 0%, #200047d0 52%), url("../../assets/hero1.png");
-    background-image: url("../../assets/hero1.png");
+    background: linear-gradient(to right, #200047 0%, #200047d0 52%), url("../../assets/contact.png");
+    background-image: url("../../assets/contact.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

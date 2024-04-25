@@ -11,10 +11,8 @@ import { fetchProduct, selectAllProducts } from '../../store/productSlice';
 import ProductCard from '../Product/productCard';
 
 const ProductSlide = () => {
-  // const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
-  // console.log(products, ">>>> products here")
 
   const settings = {
     dots: false,
@@ -84,4 +82,3 @@ const ProductSlide = () => {
 export default ProductSlide;
 
 
-//{JSON.stringify(menu)}

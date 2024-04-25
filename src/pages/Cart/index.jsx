@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { cartProduct } from "../../store/cartSlice";
 import styles from './cart.module.css';
-// import ProductSummary from "../../components/ProductSummary";
 import CartSummary from "../../components/CartSummary";
 import Button from "../../components/Button";
 import useTabSwitch from "../../components/TabHooks/useTabSwitch";
@@ -17,7 +16,7 @@ const Cart = () => {
 
     
     const navigateToPayment = () => {
-        handleTabSwitch('Payment'); // Switch to the payment tab
+        handleTabSwitch('Payment');
     };
     if (!cart || cart.length === 0) {
         return <div className={styles.cartContainer}> 
@@ -31,8 +30,6 @@ const Cart = () => {
         <Tabs list={tabs} 
         onTabSwitch={handleTabSwitch} 
         activeTab={currentTab} />
-
-        {/* {JSON.stringify(cart)} */}
         <div className={`${currentTab !== 'Summary' ? styles.hidden : ''}`}>
             {
                 cart && cart?.map((product, index) => {
@@ -46,7 +43,6 @@ const Cart = () => {
         </div>
         <div className={`${currentTab !== 'Delivery' ? styles.hidden : ''}`}>
             <div className={styles.deliveryContainer }>
-                {/* <p>Delivery</p> */}
                 <PriceTotal/>
                 <Delivery navigateToPayment={navigateToPayment}/>
 
@@ -55,7 +51,6 @@ const Cart = () => {
         </div>
         <div className={`${currentTab !== 'Payment' ? styles.hidden : ''}`}>
             <div className={styles.deliveryContainer }>
-                {/* <p>Delivery</p> */}
                 <Payment/>
             </div>
             
@@ -65,46 +60,4 @@ const Cart = () => {
 }
 
 export default Cart;
-
-
-// import { useSelector } from "react-redux";
-// import { cartProduct } from "../../store/cartSlice";
-// import styles from './cart.module.css';
-// // import ProductSummary from "../../components/ProductSummary";
-// import CartSummary from "../../components/CartSummary";
-// import Button from "../../components/Button";
-
-// const Cart = () => {
-//     const cart = useSelector(cartProduct)
-
-//     const handleTab = ()=>{}
-
-//     if (!cart || cart.length === 0) {
-//         return <div className={styles.cartContainer}> 
-//         <div className={styles.emptyCart}>
-//             Your cart is empty
-//         </div>
-//         </div>
-//     }
-
-//     return <div className={styles.cartContainer}>
-//         {JSON.stringify(cart)}
-
-//         {
-//             cart && cart?.map((product, index) => {
-//               return (
-//                 <CartSummary key={index} product={product}/>
-                
-//             )})
-//         }
-//         <div className={styles.btnWrap}>        
-//             <Button variant="secondary" onClick={handleTab}>Next</Button>
-//         </div>
-      
-
-//     </div>
-// }
-
-// export default Cart;
-
 

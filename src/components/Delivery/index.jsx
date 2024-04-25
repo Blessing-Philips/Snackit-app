@@ -154,18 +154,3 @@ const Delivery = ({ navigateToPayment }) => {
 }
 
 export default Delivery;
-
-
-
-
-// const signInSchema = Yup.object({
-//     phoneNo: Yup.string().required('Enter your phone number')
-//     .min(11, 'Too Short!')
-//     .max(11, 'Too Long!')
-//     .required('Required'),
-//     address: Yup.string().required('Enter your address')
-//     .required('Required'),
-//     city: Yup.string()
-    
-// })
-

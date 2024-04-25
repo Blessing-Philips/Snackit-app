@@ -1,14 +1,9 @@
 import PropTypes from 'prop-types';
 import styles from './card.module.css';
-// import { MdOutlineShoppingCart } from "react-icons/md";
-
-
-
-
 
 const cardItems = [
     {
-        title: "Master Chef",
+        title: "Outdoor Catering",
         desc: "Discover tantalizing recipes, expert cooking tips, captivating food stories, and the latest culinary trends that will elevate your dining experience to new heights.",
         image: "https://cdn-icons-png.freepik.com/256/7270/7270992.png?ga=GA1.1.1531398589.1702848145&semt=ais_hybrid",
       },

@@ -5,7 +5,6 @@ import styles from './about.module.css';
 import about1 from '../../assets/image-14.png';
 import about2 from '../../assets/image-18.png';
 import about3 from '../../assets/image-12.png';
-// import hero from '../../assets/hero1.png';
 import Button from "../../components/Button";
 
 

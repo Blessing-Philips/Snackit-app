@@ -18,13 +18,15 @@ const Login = () => {
     
 
     const onSubmitHandler=(data)=>{
+        console.log(data)
         setLoading(true);
         const authentication = getAuth();
         // let uid;
         signInWithEmailAndPassword(authentication, data.email, data.password)
             .then((response) =>{
                 // uid = response.user.uid;
-                sessionStorage.setItem('User', response.user);
+                console.log(response)
+                sessionStorage.setItem('User', data.username);
                 sessionStorage.setItem('Auth token', response._tokenResponse.refreshToken);
                 window.dispatchEvent(new Event("storage"))
                 toast.success('Login successfull!', {
@@ -120,30 +122,3 @@ const LoginSchema = Yup.object({
 
 
 app
-// <Formik initialValues={{ 
-//                     fullName: '', 
-//                     email: '', 
-//                     password: '',
-//                     confirmPassword: '' 
-//                 }} 
-//                 validationSchema={LoginSchema}
-//                 onSubmit={handleSubmit}>
-//                 <Form className={styles.form}> 
-//                     <label htmlFor='Email'>Email</label>
-//                     <input id="Email" type="email" name="email" placeholder="Email" />
-//                     <ErrorMessage name="email">
-//                         { msg => <div style={{ color: '#c41b1b' }}>{msg}</div> }
-//                     </ErrorMessage>
-//                     <label htmlFor='password'>Password</label>
-//                     <input  id="password"type="password" name="password" placeholder="Password" />
-//                     <ErrorMessage name="password">
-//                         { msg => <div style={{ color: '#c41b1b' }}>{msg}</div> }
-//                     </ErrorMessage>
-//                     <span className={styles.span}>Forgot Password?</span>
-//                     <div className={styles.btnwrap}>
-//                         <Button type="submit" variant="primary"> Login</Button>
-//                     </div>
-//                     
-//                 </Form>
-
-//             </Formik>

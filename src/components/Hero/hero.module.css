@@ -44,42 +44,8 @@
     width: 214px;
 }
 
-/* .imagecontainer {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    height: 50%; 
-    overflow: hidden;
-}
 
- .imagecontainer > img {
-    width: 100%;
-    height: auto;  
-    animation-name: imgRotate;
-    animation-duration: 50s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-} */
 
-@keyframes imgRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  /*RESPONSIVENESS*/
-
-  /* For Desktop View */
 @media screen and (min-width: 1083px) {
     /* .main {
         flex-wrap: wrap;

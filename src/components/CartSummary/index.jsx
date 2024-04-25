@@ -34,7 +34,7 @@ const CartSummary = ({ product }) => {
 
 CartSummary.propTypes = {
     product: PropTypes.shape({
-        id: PropTypes.string,
+        _id: PropTypes.string,
         // id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         imageURL: PropTypes.string.isRequired,

@@ -18,11 +18,3 @@ const Button = ({variant, children, onClick}) => {
     </button>
 }
 export default Button;
-
-
-// export const AddButton = ({onAddItem}) => {
-//     AddButton.propTypes = {
-//         onAddItem: PropTypes.node.isRequired,
-//         };
-//     <button onClick={onAddItem} className={styles.btn}>Add +</button>
-// }

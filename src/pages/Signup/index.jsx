@@ -20,32 +20,51 @@ const SignUp = () => {
     
 
     const onSubmitHandler =(data)=>{
+        console.log(data);
         setLoading(true);
         const authentication = getAuth();
-        // let uid;
-        createUserWithEmailAndPassword(authentication, data.email, data.password)
+        createUserWithEmailAndPassword(authentication, data.email, data.password, data.username)
             .then((response) =>{
-                // uid = response.user.uid;
-                sessionStorage.setItem('User', response.user);
+                sessionStorage.setItem('User', response.username);
                 sessionStorage.setItem('Auth token', response._tokenResponse.refreshToken);
                 window.dispatchEvent(new Event("storage"))
-                toast.success('Account created successfully!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'dark'
-                });
-                navigate('/');
             })
             .catch((error) =>{
                 if(error.code === 'auth/email-already-in-use'){
                     toast.error('Email already exist')
                 }
+            })
+            
+            fetch('http://localhost:3000/api/new-user', {
+                method: 'POST',
+                header: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: data.email,
+                    name: data.username,
+                    _id: data.uid,
+                })
+            }).then(response => {
+                if(response.status === 200) {
+                    setLoading(false);
+                    toast.success('Account created successfully!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'dark'
+                    });
+                    navigate('/');
+                } else {
+                    console.log(response.json());
+                }
+            }).catch((error) => {
                 setLoading(false);
+                console.log(error)
             })
     }
 
@@ -68,7 +87,7 @@ const SignUp = () => {
                     handleSubmit,               
                 }) => {
                     return <form onSubmit={handleSubmit} className={styles.form}>
-                        <label htmlFor='username'>Full name</label>
+                        <label htmlFor='username'>Username</label>
                         <input 
                             value={values.username}
                             name="username"
@@ -117,7 +136,7 @@ const SignUp = () => {
 }
 
 const defaultValues = {
-name: "",
+username: "",
 email: "",
 password: "",
 confirmPassword: '' 
@@ -144,91 +163,3 @@ export default SignUp;
 
 
 app
-// createUserWithEmailAndPassword(authentication, data.fullName, data.email, data.password)
-//             .then((response) =>{
-//                 // uid = response.user.uid;
-//                 sessionStorage.setItem('User', response.user);
-//                 sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken);
-//                 window.dispatchEvent(new Event("storage"))
-//             })
-//             .catch((error) =>{
-//                 if(error.code == 'auth/email-already-in-use'){
-//                     toast.error('Email already exist')
-//                 }
-//             })
-
-//             fetch('https://reqres.in/api/register', {
-//                 method: 'POST',
-//                 header: {
-//                     'Content-Type': 'application/json'
-//                 },
-//                 body: JSON.stringify({
-//                     email: data.email,
-//                     name: data.fullName,
-//                     _id: data.uid,
-//                 })
-//             }).then(response => {
-//                 if(response.status === 200){
-//                     setLoading(false);
-//                     toast.success('Account created successfully!', {
-//                         position: "top-right",
-//                         autoClose: 5000,
-//                         hideProgressBar: false,
-//                         closeOnClick: true,
-//                         pauseOnHover: true,
-//                         draggable: true,
-//                         progress: undefined,
-//                         theme: 'dark'
-//                     });
-//                     navigate('/');
-//                 } else {
-//                     console.log(response.json());
-//                 }
-//             }).catch((error) => {
-//                 setLoading(false);
-//                 console.log(error);
-//             })
-//     }
-
-
-
-
-
-
-
-
-{/* <Formik initialValues={{ 
-    fullName: '', 
-    email: '', 
-    password: '',
-    confirmPassword: '' 
-}} 
-validationSchema={signInSchema}
-onSubmit={handleSubmit}>
-<Form className={styles.form}>
-    <label htmlFor='fullName'>Full name</label>
-    <input id="fullName" type="text" name="fullName" placeholder="Full Name" />
-    <ErrorMessage name="fullName">
-        { msg => <div style={{ color: '#c41b1b'}}>{msg}</div> }
-    </ErrorMessage>
-    <label htmlFor='Email'>Email</label>
-    <input id="Email" type="email" name="email" placeholder="Email" />
-    <ErrorMessage name="email">
-        { msg => <div style={{ color: '#c41b1b' }}>{msg}</div> }
-    </ErrorMessage>
-    <label htmlFor='Password'>Password</label>
-    <input id="Password" type="password" name="password" placeholder="Password" />
-    <ErrorMessage name="password">
-        { msg => <div style={{ color: '#c41b1b' }}>{msg}</div> }
-    </ErrorMessage>
-    <label htmlFor='confirmPassword'>Confirm Password</label>
-    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password"
-    />
-    <ErrorMessage name="confirmPassword">
-        { msg => <div style={{ color: '#c41b1b' }}>{msg}</div> }
-    </ErrorMessage>
-    <div className={styles.btnwrap}>
-        <Button type="submit" variant="primary">{loading ? "loading..." : "Sign Up"}</Button>
-    </div>                
-</Form>
-</Formik> */}
