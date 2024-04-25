@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 //Loads .env file contents into process.env by default.
-//const stripe = require ('stripe')
 
 const app = express();
 
@@ -15,7 +14,8 @@ const paymentRouter = require('./routes/paymentRoute');
 
 
 var corsOption = {
-    origin : "http://localhost:5173"
+    origin : "http://localhost:5173",
+    credentials : true
 };
 
 app.use(cors(corsOption));
@@ -40,7 +40,7 @@ app.use('/api/', productRouter);
 
 app.use('/api/', customerRouter);
 
-app.use('/', paymentRouter);
+app.use('/api/', paymentRouter);
 
 //PAYMENT GATEWAY INTEGRATION
 
