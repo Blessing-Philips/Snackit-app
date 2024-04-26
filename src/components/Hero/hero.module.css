@@ -56,34 +56,57 @@
 @media screen and (min-device-width: 768px) 
     and (max-device-width: 1083px) {
     .main{
-        flex-shrink: 0;
+        /* flex-shrink: 0; */
     }
     .textwrap{
-        width: 50%;
+        width: 70%;
     }
     .lead{
-        font-size: var(--medium);
+        font-size: var(--large);
     }
 
     .textwrap p {
         width: 80%;
     }
 }
+@media screen and (max-device-width: 1004px) {
+    .main{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;    
+    }
+    .textwrap{
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+    }
+    .lead {
+        font-size: var(--large);
+        line-height: 65px;
+        font-family: "Joti One";
+        color: var(--white);
+    }
+    
+    .textwrap p{
+        text-align: center;
+    }
+}
 @media screen and (min-device-width: 480px) 
     and (max-device-width: 767px) {
         .main{
             flex-direction: column;
-            padding: 100px 0 0;
+            align-items: center;
+            justify-content: center;
+
         }
         .textwrap{
             width: 80%;
             align-items: center;
             justify-content: center;
-            text-align: center;
         }
         .lead {
-            font-size: 30px;
-            line-height: 40px;
+            font-size: var(--medium);
+            line-height: 65px;
             font-family: "Joti One";
             color: var(--white);
         }
@@ -98,7 +121,8 @@
     and (orientation: portrait) {
         .main{
             flex-direction: column;
-            padding: 100px 0 0;
+            align-items: center;
+            justify-content: center;
             
         }
         .textwrap{
@@ -122,10 +146,12 @@
     and (orientation: portrait) {
         .main{
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             
         }
         .textwrap{
-            padding: 50px 0;
+            /* padding: 50px 0; */
             width: 50%;
             align-items: center;
             justify-content: center;
