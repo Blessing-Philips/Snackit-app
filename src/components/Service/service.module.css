@@ -1,7 +1,7 @@
 .container {
-/* background-color: blue; */
 padding: 40px 20px;
 }
+
 .container > h2 {
     font-size: var(--medium);
     text-align: center;
@@ -9,6 +9,7 @@ padding: 40px 20px;
     color: var(--purple);
     font-family: 'Joti One';
 }
+
 .container > p {
     padding: 0 0 40px;
     margin: auto;
@@ -16,6 +17,7 @@ padding: 40px 20px;
     color: var(--dark);
     text-align: center;
 }
+
 .imageContainer{
     padding: 20px 0 0;
     display: flex;
@@ -23,13 +25,16 @@ padding: 40px 20px;
     align-items: center;
     text-align: center;
 }
+
 .imageContainer div{
     width: 50%;
 }
+
 .imageContainer div> img{
     width: 100%;
     object-fit: contain;
 }
+
 .btnWrap{
     width: 200px;
 }
@@ -38,11 +43,9 @@ padding: 40px 20px;
     .imageContainer{
         padding: 20px 20px 0;
     }
-
     .btnWrap{
         margin: 0 20px 0 ;
         width: 200px;
     }
-
 }
 

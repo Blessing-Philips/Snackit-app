@@ -32,7 +32,7 @@ const Navigation = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
+    
     return <>
         <header className={`container ${styles.header} ${scrolled ? styles.scrolled : ''}`}> 
             <NavBar isOpen={isOpen} toggleMenu={toggleMenu}/> 
@@ -101,7 +101,7 @@ function NavBar ({isOpen, toggleMenu}) {
             <img src={Logo} alt=" This is the logo" />
         </div>
         <div className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>
-            <ul className={styles.navlist}>
+            <ul className={`${styles.navlist} ${isOpen ? styles.display : ''}`}>
                 <li><Link to="/" onClick={() => handleClick('Home')} className={activeList === 'Home' ? 'active' : ''}>Home</Link></li>
                 <li><Link to="/about" onClick={() => handleClick('about')} className={activeList === 'about' ? 'active' : ''}>About</Link></li>
                 <li><Link to="/menu" onClick={() => handleClick('menu')} className={activeList === 'menu' ? 'active' : ''}>Menu</Link></li>
