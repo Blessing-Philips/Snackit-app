@@ -14,8 +14,9 @@ const paymentRouter = require('./routes/paymentRoute');
 
 
 var corsOption = {
-    origin : "http://localhost:5173",
-    credentials : true
+    origin : "*",
+    //credentials : true,
+    allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOption));
