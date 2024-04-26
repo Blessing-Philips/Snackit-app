@@ -33,13 +33,41 @@
   /*RESPONSIVENESS*/
 
   /* For Desktop View */
+
+  @media screen and (max-device-width: 1170px) {
+    .wrap{
+        width: 300px;
+        
+    }
+
+}
+
+@media screen and (min-device-width: 768px) 
+and (max-device-width: 1004px) {
+.wrap{
+   width: 370px;
+   margin: auto;
+}
+.textwrap{
+    width: 50%;
+}
+.lead{
+    font-size: var(--medium);
+}
+
+.textwrap p {
+    width: 80%;
+}
+}
+
+
   @media screen and (min-width: 1083px) {
     
 }
  
 /* For Tablet View */
 @media screen and (min-device-width: 768px) 
-    and (max-device-width: 908px) {
+    and (max-device-width: 1004px) {
         .cardFlex {
             flex-wrap: wrap;   
             justify-content: center;
@@ -60,14 +88,15 @@
 }
  
 /* For Mobile Portrait View */
-@media screen and (max-device-width: 486px) 
+@media screen and (max-device-width: 600px) 
     and (orientation: portrait) {
         .cardFlex {
             flex-wrap: wrap;   
             justify-content: center;
         } 
         .card{
-            width: 100%
+            width: 100%;
+            text-align: center;
         }
 }
 

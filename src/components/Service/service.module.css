@@ -12,7 +12,7 @@ padding: 40px 20px;
 .container > p {
     padding: 0 0 40px;
     margin: auto;
-    width: 989px;
+    max-width: 900px;
     color: var(--dark);
     text-align: center;
 }
@@ -32,5 +32,17 @@ padding: 40px 20px;
 }
 .btnWrap{
     width: 200px;
+}
+
+@media screen and (max-device-width: 1170px) {
+    .imageContainer{
+        padding: 20px 20px 0;
+    }
+
+    .btnWrap{
+        margin: 0 20px 0 ;
+        width: 200px;
+    }
+
 }
 

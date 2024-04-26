@@ -36,3 +36,32 @@
     width: 350px;
     padding:  0 50px;
 }
+
+@media screen and (min-device-width: 2px) 
+    and (max-device-width: 767px) {
+        .footerList{    
+            display: flex;
+            column-gap: 50px;
+            
+        }
+        
+}
+@media screen and (min-device-width: 2px) 
+    and (max-device-width: 355px) {
+        .list{    
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            
+        }
+        
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+        .footerList{    
+            display: flex;            
+        }
+        
+}
