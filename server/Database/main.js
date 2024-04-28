@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const env = require('dotenv').config({path: '../.env'})
 
 mongoose
     .connect('mongodb+srv://BlessingPhilips:Ao0XOOLvOHometQJ@cluster0.0outlfh.mongodb.net/Snackit', { useNewUrlParser: true, useUnifiedTopology: true })
